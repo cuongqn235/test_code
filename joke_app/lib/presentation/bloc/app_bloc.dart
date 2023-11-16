@@ -14,7 +14,7 @@ class AppBloc extends Bloc<AppEvent, AppState> {
   AppBloc(
     this._appRepository,
     this._jokeRepository,
-  ) : super(AppState()) {
+  ) : super(const AppState()) {
     on<AppEventInitial>(_initial);
     on<AppEventEndOnboard>(_endOnBoard);
   }
