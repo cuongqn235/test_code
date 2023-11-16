@@ -1,0 +1,47 @@
+﻿import 'dart:io';
+
+//Note: (The output can be greater than a 32 bit integer.)
+/*
+  int Integer values no larger than 64 bits, depending on the platform.
+  On the Dart VM, values can be from -2^63 to 2^63 - 1.
+  Dart that’s compiled to JavaScript uses JavaScript numbers, 
+  allowing values from -2^53 to 2^53 - 1.
+*/
+void main() {
+  try {
+  var stdin = stdin.readLineSync()!;
+  List<int> arr = stdin.trim().split(' ').map(int.parse).toList();
+
+
+    miniMaxSum(arr);
+  } on Exception catch (e) {
+    if (e is IOException) {
+      print('Error: Invalid input');
+    } else {
+      print('Error: $e');
+    }
+  }
+}
+
+void miniMaxSum(List<int> arrInput) {
+  int sum = 0;
+  int min = arrInput[0];
+  int max = arrInput[0];
+
+  for (int i = 0; i < arrInput.length; i++) {
+    sum += arrInput[i];
+    if (arrInput[i] > max) {
+      max = arrInput[i];
+    }
+    if (arrInput[i] < min) {
+      min = arrInput[i];
+    }
+  }
+  final int minSum = sum - max;
+  final int maxSum = sum - min;
+  debugPrint('$minSum $maxSum');
+  
+/// + Count total of array -> [sum]
+/// + Find min in array -> [min]
+/// + Find max in array -> [max]
+}
