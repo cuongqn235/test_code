@@ -1,5 +1,6 @@
 import 'package:injectable/injectable.dart';
 import 'package:joke_app/data/providers/local/joke/joke_dao.dart';
+import 'package:joke_app/data/providers/local/joke/joke_model.dart';
 import 'package:joke_app/domain/entities/joke_entity.dart';
 import 'package:joke_app/domain/repositories/joke/i_joke_repository.dart';
 
@@ -10,7 +11,15 @@ class JokeRepository implements IJokeRepository {
   @override
   Future<void> setupData() {
     final jokeEntities = JokeEntity.fakeData;
-    return _jokeDao.saveAll(jokeEntities.map((e) => e.toModel).toList());
+    final jokeModels = jokeEntities
+        .map((e) => JokeModel(
+              id: e.id,
+              isFunny: e.isFunny,
+              descriptionJoke: e.descriptionJoke,
+              createdAt: e.createdAt,
+            ))
+        .toList();
+    return _jokeDao.saveAll(jokeModels);
   }
 
   @override

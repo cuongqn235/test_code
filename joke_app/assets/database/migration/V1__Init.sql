@@ -1,6 +1,6 @@
 CREATE TABLE IF NOT EXISTS joke (
-      id TEXT NOT NULL PRIMARY KEY,
-      isFunny BOOLEAN NULL,
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      isFunny BOOLEAN,
       descriptionJoke TEXT NOT NULL,
-      createdAt TEXT NOT NULL,
+      createdAt TEXT NOT NULL
       );

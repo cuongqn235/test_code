@@ -5,12 +5,12 @@ part 'joke_model.g.dart';
 @JsonSerializable()
 class JokeModel extends AppBaseModel {
   JokeModel({
-    required this.id,
-    required this.isFunny,
+    this.id,
+    this.isFunny,
     required this.descriptionJoke,
     required this.createdAt,
   });
-  final String id;
+  final int? id;
   final bool? isFunny;
   final String descriptionJoke;
   final String createdAt;

@@ -26,8 +26,7 @@ class JokeDao extends AppBaseDaoImpl<JokeModel> {
 
   Future<JokeModel?> getJokeModelDontFunny() async {
     final result = await sqlite.rawQuery(
-      'SELECT * FROM $tableName WHERE isFunny = ?',
-      [null],
+      'SELECT * FROM $tableName WHERE isFunny is null',
     );
     final entities = result.map(jsonToEntity).toList();
     if (entities.isEmpty) {

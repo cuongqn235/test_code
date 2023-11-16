@@ -3,9 +3,9 @@ import 'package:flutter/services.dart';
 import 'package:injectable/injectable.dart';
 import 'package:joke_app/app/gen/assets.gen.dart';
 import 'package:joke_app/app/util/util.dart';
+import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:sqflite/sqflite.dart';
 
 @module
 abstract class LocalModule {
@@ -16,7 +16,7 @@ abstract class LocalModule {
 
   Future<Database> _setupDB() async {
     final databasesPath = await getDatabasesPath();
-    final path = join(databasesPath, 'joke_app.db');
+    final path = join(databasesPath, 'jokeApp.db');
     debugPrint('Database path: $path');
     // final migrationScripts = <String>[];
     final migrationScripts = await Future.wait(

@@ -14,7 +14,7 @@ class AppBloc extends Bloc<AppEvent, AppState> {
   AppBloc(
     this._appRepository,
     this._jokeRepository,
-  ) : super(AppInitial()) {
+  ) : super(AppState()) {
     on<AppEventInitial>(_initial);
     on<AppEventEndOnboard>(_endOnBoard);
   }
@@ -29,12 +29,12 @@ class AppBloc extends Bloc<AppEvent, AppState> {
       await _appRepository.clearAllData();
       await _jokeRepository.setupData();
     }
-    emit(AppInitial(isFirstLaunch: isFirstLaunch));
+    emit(AppState(isFirstLaunch: isFirstLaunch));
   }
 
   FutureOr<void> _endOnBoard(
       AppEventEndOnboard event, Emitter<AppState> emit) async {
     await _appRepository.saveFirstLaunch();
-    emit(AppInitial(isFirstLaunch: false));
+    emit(const AppState(isFirstLaunch: false));
   }
 }

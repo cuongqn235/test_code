@@ -7,7 +7,7 @@ part of 'joke_model.dart';
 // **************************************************************************
 
 JokeModel _$JokeModelFromJson(Map<String, dynamic> json) => JokeModel(
-      id: json['id'] as String,
+      id: json['id'] as int?,
       isFunny: json['isFunny'] as bool?,
       descriptionJoke: json['descriptionJoke'] as String,
       createdAt: json['createdAt'] as String,

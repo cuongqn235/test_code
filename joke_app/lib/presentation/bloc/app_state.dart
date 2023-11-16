@@ -1,11 +1,9 @@
 part of 'app_bloc.dart';
 
-sealed class AppState extends Equatable {}
-
-final class AppInitial extends AppState {
+class AppState extends Equatable {
   final bool? isFirstLaunch;
 
-  AppInitial({this.isFirstLaunch});
+  const AppState({this.isFirstLaunch});
 
   @override
   List<Object?> get props => [isFirstLaunch];
