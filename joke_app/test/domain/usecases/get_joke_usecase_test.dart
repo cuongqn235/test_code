@@ -7,12 +7,7 @@ void main() {
   var data = () {
     try {
       final respose = JokeModel(id: 1, descriptionJoke: '1', createdAt: '1');
-      return right(JokeEntity(
-        id: respose.id!,
-        isFunny: respose.isFunny,
-        descriptionJoke: respose.descriptionJoke,
-        createdAt: respose.createdAt,
-      ));
+      return right(JokeEntity.fromModel(respose));
     } catch (e) {
       return left(Exception('Error'));
     }

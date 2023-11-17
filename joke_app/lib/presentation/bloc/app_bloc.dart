@@ -30,6 +30,7 @@ class AppBloc extends Bloc<AppEvent, AppState> {
       await _jokeRepository.setupData();
     }
     emit(AppState(isFirstLaunch: isFirstLaunch));
+    add(AppEventEndOnboard());
   }
 
   FutureOr<void> _endOnBoard(

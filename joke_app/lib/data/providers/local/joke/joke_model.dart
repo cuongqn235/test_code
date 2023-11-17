@@ -11,7 +11,7 @@ class JokeModel extends AppBaseModel {
     required this.createdAt,
   });
   final int? id;
-  final bool? isFunny;
+  final int? isFunny;
   final String descriptionJoke;
   final String createdAt;
 

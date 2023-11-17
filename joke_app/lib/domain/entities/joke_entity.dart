@@ -12,9 +12,15 @@ class JokeEntity {
   final String descriptionJoke;
   final String createdAt;
   factory JokeEntity.fromModel(JokeModel model) {
+    bool? isFunny;
+    if (model.isFunny == 1) {
+      isFunny = true;
+    } else if (model.isFunny == 0) {
+      isFunny = false;
+    }
     return JokeEntity(
       id: model.id!,
-      isFunny: model.isFunny,
+      isFunny: isFunny,
       descriptionJoke: model.descriptionJoke,
       createdAt: model.createdAt,
     );

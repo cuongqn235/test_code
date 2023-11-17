@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:joke_app/app/inject_dependency/inject_dependency.dart';
 import 'package:joke_app/presentation/bloc/app_bloc.dart';
+import 'package:joke_app/presentation/feature/home/splash/splash.dart';
 import 'package:joke_app/presentation/feature/home/ui/home_page.dart';
 import 'package:joke_app/presentation/initial/initial_cubit.dart';
 
@@ -54,6 +55,7 @@ class __MyAppState extends State<_MyApp> {
       processIntital.future,
     ]).then((value) {
       if (mounted) {
+        appBloc.add(AppEventEndOnboard());
         context.read<InitialCubit>().end();
       }
     });
@@ -79,7 +81,7 @@ class __MyAppState extends State<_MyApp> {
           },
           builder: (context, isFinish) {
             if (!isFinish) {
-              return const SizedBox.shrink();
+              return const SplashPage();
             }
             return const HomePage(title: 'Flutter Demo Home Page');
           },

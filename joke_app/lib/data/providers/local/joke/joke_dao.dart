@@ -34,4 +34,12 @@ class JokeDao extends AppBaseDaoImpl<JokeModel> {
     }
     return entities.first;
   }
+
+  Future<int> updateData(JokeModel data) async {
+    final result = await sqlite.rawUpdate(
+      'UPDATE $tableName SET isFunny = ? WHERE id = ?',
+      [data.isFunny, data.id],
+    );
+    return result;
+  }
 }

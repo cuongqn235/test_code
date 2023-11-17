@@ -16,6 +16,16 @@ class $AssetsDatabaseGen {
       const $AssetsDatabaseMigrationGen();
 }
 
+class $AssetsIconsGen {
+  const $AssetsIconsGen();
+
+  /// File path: assets/icons/ic_logo.png
+  AssetGenImage get icLogo => const AssetGenImage('assets/icons/ic_logo.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [icLogo];
+}
+
 class $AssetsDatabaseMigrationGen {
   const $AssetsDatabaseMigrationGen();
 
@@ -30,6 +40,7 @@ class Assets {
   Assets._();
 
   static const $AssetsDatabaseGen database = $AssetsDatabaseGen();
+  static const $AssetsIconsGen icons = $AssetsIconsGen();
 }
 
 class AssetGenImage {
