@@ -1,4 +1,4 @@
-import 'package:joke_app/data/providers/local/joke/joke_model.dart';
+import 'package:joke_app/data/models/joke/joke_model.dart';
 
 class JokeEntity {
   JokeEntity({

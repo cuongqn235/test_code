@@ -1,6 +1,6 @@
 ﻿import 'package:injectable/injectable.dart';
+import 'package:joke_app/data/models/joke/joke_model.dart';
 import 'package:joke_app/data/providers/local/dao/base_dao.dart';
-import 'package:joke_app/data/providers/local/joke/joke_model.dart';
 
 @singleton
 class JokeDao extends AppBaseDaoImpl<JokeModel> {

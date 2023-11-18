@@ -8,6 +8,7 @@ class SplashPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Scaffold(
       extendBodyBehindAppBar: true,
+      backgroundColor: Colors.white,
       body: SafeArea(
         top: false,
         bottom: false,

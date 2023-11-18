@@ -1,6 +1,6 @@
 import 'package:injectable/injectable.dart';
-import 'package:joke_app/data/providers/local/joke/joke_dao.dart';
-import 'package:joke_app/data/providers/local/joke/joke_model.dart';
+import 'package:joke_app/data/models/joke/joke_dao.dart';
+import 'package:joke_app/data/models/joke/joke_model.dart';
 import 'package:joke_app/domain/entities/add_joke_feedback_input.dart';
 import 'package:joke_app/domain/entities/joke_entity.dart';
 import 'package:joke_app/domain/repositories/joke/i_joke_repository.dart';
