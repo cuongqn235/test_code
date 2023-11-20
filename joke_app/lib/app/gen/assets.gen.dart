@@ -19,11 +19,15 @@ class $AssetsDatabaseGen {
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// File path: assets/icons/ic_avatar.png
+  AssetGenImage get icAvatar =>
+      const AssetGenImage('assets/icons/ic_avatar.png');
+
   /// File path: assets/icons/ic_logo.png
   AssetGenImage get icLogo => const AssetGenImage('assets/icons/ic_logo.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [icLogo];
+  List<AssetGenImage> get values => [icAvatar, icLogo];
 }
 
 class $AssetsDatabaseMigrationGen {

@@ -117,17 +117,11 @@ class _HomePageState extends State<HomePage> {
               ClipRRect(
                 borderRadius: BorderRadius.circular(20),
                 child: SizedBox(
-                  height: 40,
-                  width: 40,
-                  child: CachedNetworkImage(
-                    imageUrl: 'https://cdn.eso.org/images/large/eso1031b.jpg',
-                    fit: BoxFit.cover,
-                    placeholder: (context, url) =>
-                        const CircularProgressIndicator(),
-                    errorWidget: (context, url, error) =>
-                        const Icon(Icons.error),
-                  ),
-                ),
+                    height: 40,
+                    width: 40,
+                    child: Assets.icons.icAvatar.image(
+                      fit: BoxFit.cover,
+                    )),
               ),
               const SizedBox(
                 width: 4,
